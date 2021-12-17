@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace Atak011\VaoCore\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class VaoCoreCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'vao-core';
 
     public $description = 'My command';
 

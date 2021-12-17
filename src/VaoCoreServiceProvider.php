@@ -1,12 +1,16 @@
 <?php
 
-namespace VendorName\Skeleton;
+namespace Atak011\VaoCore;
 
+
+
+
+use Atak011\VaoCore\Components\Alert;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use VendorName\Skeleton\Commands\SkeletonCommand;
+use Atak011\VaoCore\Commands\VaoCoreCommand;
 
-class SkeletonServiceProvider extends PackageServiceProvider
+class VaoCoreServiceProvider extends PackageServiceProvider
 {
     public function configurePackage(Package $package): void
     {
@@ -16,10 +20,13 @@ class SkeletonServiceProvider extends PackageServiceProvider
          * More info: https://github.com/spatie/laravel-package-tools
          */
         $package
-            ->name('skeleton')
+            ->name('vao-core')
+            ->hasViewComponent('spatie', Alert::class)
             ->hasConfigFile()
             ->hasViews()
-            ->hasMigration('create_skeleton_table')
-            ->hasCommand(SkeletonCommand::class);
+            ->hasAssets()
+            ->hasMigration('create_vao-core_table')
+            ->hasCommand(VaoCoreCommand::class);
+
     }
 }
