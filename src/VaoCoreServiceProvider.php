@@ -5,6 +5,8 @@ namespace Atak011\VaoCore;
 
 use Atak011\VaoCore\Components\Alert;
 use Atak011\VaoCore\Components\Error;
+use Atak011\VaoCore\Components\Forms\UpsertForm;
+use Atak011\VaoCore\Components\Inputs\TextInput;
 use Atak011\VaoCore\Components\Stats\Stats1;
 use Atak011\VaoCore\Components\Toast\ToastNotification;
 use Spatie\LaravelPackageTools\Package;
@@ -26,7 +28,9 @@ class VaoCoreServiceProvider extends PackageServiceProvider
                 Alert::class,
                 Error::class,
                 Stats1::class,
-                ToastNotification::class
+                ToastNotification::class,
+                TextInput::class,
+                UpsertForm::class
             )
             ->hasConfigFile()
             ->hasViews()

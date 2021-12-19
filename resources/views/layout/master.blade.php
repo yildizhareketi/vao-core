@@ -8,12 +8,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <link rel="canonical" href="https://keenthemes.com/metronic"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700"/>
-    <link href="{{ asset('vendor/vao-core/plugins/custom/fullcalendar/fullcalendar.bundle.css') }}" rel="stylesheet" type="text/css"/>
+    <link href="{{ asset('vendor/vao-core/plugins/custom/fullcalendar/fullcalendar.bundle.css') }}" rel="stylesheet"
+          type="text/css"/>
     <link href="{{ asset('vendor/vao-core/plugins/global/plugins.bundle.css') }}" rel="stylesheet" type="text/css"/>
-    <link href="{{ asset('vendor/vao-core/plugins/custom/prismjs/prismjs.bundle.css') }}" rel="stylesheet" type="text/css"/>
+    <link href="{{ asset('vendor/vao-core/plugins/custom/prismjs/prismjs.bundle.css') }}" rel="stylesheet"
+          type="text/css"/>
     <link href="{{ asset('vendor/vao-core/css/style.bundle.css') }}" rel="stylesheet" type="text/css"/>
-    <link href="{{ asset('vendor/vao-core/css/themes/layout/header/base/light.css') }}" rel="stylesheet" type="text/css"/>
-    <link href="{{ asset('vendor/vao-core/css/themes/layout/header/menu/light.css') }}" rel="stylesheet" type="text/css"/>
+    <link href="{{ asset('vendor/vao-core/css/themes/layout/header/base/light.css') }}" rel="stylesheet"
+          type="text/css"/>
+    <link href="{{ asset('vendor/vao-core/css/themes/layout/header/menu/light.css') }}" rel="stylesheet"
+          type="text/css"/>
     <link href="{{ asset('vendor/vao-core/css/themes/layout/brand/dark.css') }}" rel="stylesheet" type="text/css"/>
     <link href="{{ asset('vendor/vao-core/css/themes/layout/aside/dark.css') }}" rel="stylesheet" type="text/css"/>
     <link rel="shortcut icon" href="assets/media/logos/favicon.ico"/>
@@ -188,10 +192,13 @@
             <!--end::Header-->
             <!--begin::Content-->
             <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
-                <x-vao-core-error />
+
                 <div class="d-flex flex-column-fluid">
 
-                    @yield('body')
+                    <div class="container-fluid">
+                        @yield('body')
+                    </div>
+
                 </div>
                 <!--end::Entry-->
             </div>
@@ -257,8 +264,10 @@
 								</span>
                     </a>
                     <form action="{{ route('logout') }}" method="POST">
-                         @csrf
-                        <button type="submit" class="btn btn-sm btn-light-primary font-weight-bolder py-2 px-5">Çıkış Yap</button>
+                        @csrf
+                        <button type="submit" class="btn btn-sm btn-light-primary font-weight-bolder py-2 px-5">Çıkış
+                            Yap
+                        </button>
                     </form>
 
                 </div>
@@ -335,8 +344,11 @@
 
 
 @yield('extra-js')
+@stack('extra-js-after')
 
-<x-vao-core-toast-notification />
+@if(\Illuminate\Support\Facades\Session::has('notification'))
+    <x-vao-core-toast-notification/>
+@endif
 
 </body>
 </html>

@@ -2,56 +2,64 @@
     <div id="kt_aside_menu" class="aside-menu my-4" data-menu-vertical="1" data-menu-scroll="1"
          data-menu-dropdown-timeout="500">
         <ul class="menu-nav">
-            <li class="menu-item" aria-haspopup="true">
-                <a href="/" class="menu-link">
-                    <i class="menu-icon flaticon-home"></i>
-                    <span class="menu-text">Ana Sayfa</span>
-                </a>
-            </li>
 
-            <li class="menu-section">
-                <h4 class="menu-text">Site İşlemleri</h4>
-                <i class="menu-icon ki ki-bold-more-hor icon-md"></i>
-            </li>
-            <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
-                <a href="javascript:;" class="menu-link menu-toggle">
-                    <i class="menu-icon flaticon-web"></i>
-                    <span class="menu-text">Alan Yönetimi</span>
-                    <i class="menu-arrow"></i>
-                </a>
-                <div class="menu-submenu">
-                    <i class="menu-arrow"></i>
-                    <ul class="menu-subnav">
-                        <li class="menu-item menu-item-parent" aria-haspopup="true">
-												<span class="menu-link">
-													<span class="menu-text">Alanlar</span>
-												</span>
+
+            @if(\Illuminate\Support\Facades\Config::has('menu'))
+
+                @foreach(\Illuminate\Support\Facades\Config::get('menu') as $item)
+
+                    @if(isset($item['section']) && $item['section'] != null )
+                        <li class="menu-section">
+                            <h4 class="menu-text">{{ $item['section'] }}</h4>
+                            <i class="menu-icon ki ki-bold-more-hor icon-md"></i>
                         </li>
-                        <li class="menu-item menu-item-submenu" aria-haspopup="true"
-                            data-menu-toggle="hover">
-                            <a href="" class="menu-link menu-toggle">
-                                <i class="menu-bullet menu-bullet-dot">
-                                    <span></span>
-                                </i>
-                                <span class="menu-text">Alanlar</span>
-                            </a>
-                        </li>
+                    @endif
 
-                        <li class="menu-item menu-item-submenu" aria-haspopup="true"
-                            data-menu-toggle="hover">
-                            <a href="" class="menu-link menu-toggle">
-                                <i class="menu-bullet menu-bullet-dot">
-                                    <span></span>
-                                </i>
-                                <span class="menu-text">Banner Yönetimi</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </li>
+                    <li class="menu-item {{ isset($item['children']) && $item['children'] ? 'menu-item-submenu':null }}"
+                        aria-haspopup="true" {{ isset($item['children']) && $item['children'] ? 'data-menu-toggle="hover" ':null }}>
+                        <a href="{{ isset($item['children']) && $item['children'] ? 'javascript:;':$item['link'] }}"
+                           class="menu-link {{ isset($item['children']) && $item['children'] ? 'menu-toggle':null }}">
+                            <i class="menu-icon flaticon-home"></i>
+                            <span class="menu-text">{{ $item['text'] }}</span>
+
+                            @if(isset($item['children']) && $item['children'])
+                                <i class="menu-arrow"></i>
+                            @endif
+
+                        </a>
 
 
+                        @if(isset($item['children']) && $item['children'])
 
+                            <div class="menu-submenu">
+                                <i class="menu-arrow"></i>
+                                <ul class="menu-subnav">
+
+                                    @foreach($item['children'] as $childItem)
+                                    <li class="menu-item menu-item-submenu" aria-haspopup="true"
+                                        data-menu-toggle="hover">
+                                        <a href="{{ $childItem['link'] }}" class="menu-link ">
+                                            <i class="menu-bullet menu-bullet-dot">
+                                                <span></span>
+                                            </i>
+                                            <span class="menu-text">{{ $childItem['text'] }}</span>
+                                        </a>
+                                    </li>
+                                    @endforeach
+
+                                </ul>
+                            </div>
+                        @endif
+                    </li>
+
+
+                @endforeach
+
+
+
+            @else
+                <x-vao-core-alert message="Menu Not Configured"/>
+            @endif
         </ul>
     </div>
 </div>

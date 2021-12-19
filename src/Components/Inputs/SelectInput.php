@@ -1,6 +1,6 @@
 <?php
 
-namespace Atak011\VaoCore\Components;
+namespace Atak011\VaoCore\Components\Inputs;
 
 use Illuminate\View\Component;
 

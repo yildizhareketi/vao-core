@@ -14,7 +14,7 @@ class ToastNotification extends Component
      *
      * @return void
      */
-    public function __construct($type = 'success',$text)
+    public function __construct($text,$type = 'success')
     {
 
         $this->type = $type;
