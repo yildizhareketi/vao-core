@@ -23,6 +23,7 @@
     <link rel="shortcut icon" href="assets/media/logos/favicon.ico"/>
 
     @yield('extra-css')
+    @stack('extra-css-after')
 </head>
 <body id="kt_body"
       class="header-fixed header-mobile-fixed subheader-enabled subheader-fixed aside-enabled aside-fixed aside-minimize-hoverable page-loading">
@@ -340,14 +341,14 @@
         crossorigin="anonymous"></script>
 <script src="{{ asset('vendor/vao-core/plugins/custom/gmaps/gmaps.js') }}"></script>
 <script src="{{ asset('vendor/vao-core/js/pages/widgets.js') }}"></script>
-<script src="{{ asset('admin/js/helper.js') }}"></script>
+<script src="{{ asset('vendor/vao-core/js/helper.js') }}"></script>
 
 
 @yield('extra-js')
 @stack('extra-js-after')
 
 @if(\Illuminate\Support\Facades\Session::has('notification'))
-    <x-vao-core-toast-notification/>
+    <x-vao-core-toast-notification text="Başarılı" />
 @endif
 
 </body>

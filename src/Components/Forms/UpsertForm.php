@@ -8,16 +8,20 @@ class UpsertForm extends Component
 {
     public $title;
     public $buttonText;
+    public $method;
+    public $modelSlug;
 
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($title ,$buttonText)
+    public function __construct($title ,$buttonText,$method,$modelSlug)
     {
         $this->title = $title;
         $this->buttonText = $buttonText;
+        $this->modelSlug = $modelSlug;
+        $this->method = $method;
     }
 
     public function render()

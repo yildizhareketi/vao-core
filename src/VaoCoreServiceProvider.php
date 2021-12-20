@@ -8,6 +8,7 @@ use Atak011\VaoCore\Components\Error;
 use Atak011\VaoCore\Components\Forms\UpsertForm;
 use Atak011\VaoCore\Components\Inputs\TextInput;
 use Atak011\VaoCore\Components\Stats\Stats1;
+use Atak011\VaoCore\Components\Table\DatatableTable;
 use Atak011\VaoCore\Components\Toast\ToastNotification;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
@@ -30,7 +31,8 @@ class VaoCoreServiceProvider extends PackageServiceProvider
                 Stats1::class,
                 ToastNotification::class,
                 TextInput::class,
-                UpsertForm::class
+                UpsertForm::class,
+                DatatableTable::class
             )
             ->hasConfigFile()
             ->hasViews()

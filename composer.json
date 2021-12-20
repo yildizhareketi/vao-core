@@ -53,7 +53,8 @@
                 "Atak011\\VaoCore\\VaoCoreServiceProvider"
             ],
             "aliases": {
-                "VaoCore": "Atak011\\VaoCore\\Facades\\VaoCore"
+                "VaoCore": "Atak011\\VaoCore\\Facades\\VaoCore",
+                "VaoCoreHelper": "Atak011\\VaoCore\\Facades\\VaoCoreHelper"
             }
         }
     },

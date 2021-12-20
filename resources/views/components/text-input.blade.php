@@ -28,7 +28,7 @@
 
     @endphp
 
-    <input type="text" class="form-control  {{$class}}" id="{{ $name }}" name="{{ $name }}"
+    <input type="text" class="form-control {{$class}}" id="{{ $name }}" name="{{ $name }}"
            value="{{$value}}"
            placeholder="{{ $placeholder ?? $label }}" @if($required) required @endif>
 

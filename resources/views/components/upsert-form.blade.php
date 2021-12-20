@@ -5,11 +5,10 @@
         </div>
     </div>
 
-    <form action="" method="POST" enctype="multipart/form-data">
+    <form action="{{ $method == 'PUT' ? route($modelSlug.'.update') : route($modelSlug.'.store') }}" method="POST" enctype="multipart/form-data">
         <div class="card-body">
 
-
-        @isset($category)
+        @if($method == 'PUT')
             @method('PUT')
         @endisset
         @csrf
