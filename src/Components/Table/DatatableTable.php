@@ -20,7 +20,7 @@ class DatatableTable extends Component
     {
 
         $this->modelName = $modelName;
-        $this->newButton = $modelName;
+        $this->newButton = $newButton;
         $this->modelSlug = $modelSlug;
         $this->columns   = $columns;
     }
