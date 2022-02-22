@@ -1,6 +1,6 @@
 <?php
 
-namespace Atak011\VaoCore\Components;
+namespace Atak011\VaoCore\Components\Error;
 
 use Illuminate\View\Component;
 

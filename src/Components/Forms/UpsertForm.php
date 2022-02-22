@@ -16,7 +16,7 @@ class UpsertForm extends Component
      *
      * @return void
      */
-    public function __construct($title ,$buttonText,$method,$modelSlug)
+    public function __construct($title ,$buttonText,$modelSlug,$method=null)
     {
         $this->title = $title;
         $this->buttonText = $buttonText;

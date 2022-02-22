@@ -14,14 +14,13 @@
                     <h3 class="card-label">{{ $modelName }} Listesi</h3>
                 </div>
                 @if($newButton)
-                <div class="card-toolbar">
-
-                    <a href="{{ route($modelSlug.'.create') }}" class="btn btn-primary font-weight-bolder">
-											<span class="svg-icon svg-icon-md">
-												<svg xmlns="http://www.w3.org/2000/svg"
-                                                     xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
-                                                     height="24px" viewBox="0 0 24 24" version="1.1">
-													<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <div class="card-toolbar">
+                        <a href="{{ route($modelSlug.'.create') }}" class="btn btn-primary font-weight-bolder">
+					<span class="svg-icon svg-icon-md">
+						<svg xmlns="http://www.w3.org/2000/svg"
+                             xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
+                             height="24px" viewBox="0 0 24 24">
+							<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
 														<rect x="0" y="0" width="24" height="24"></rect>
 														<circle fill="#000000" cx="9" cy="15" r="6"></circle>
 														<path
@@ -29,8 +28,10 @@
                                                                 fill="#000000" opacity="0.3"></path>
 													</g>
 												</svg>
-											</span>Yeni {{ $modelName }} Ekle</a>
-                </div>
+											</span>
+                            Yeni {{ $modelName }}
+                        </a>
+                    </div>
                 @endif
             </div>
             <div class="card-body">

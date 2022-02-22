@@ -8,15 +8,17 @@ class Stats1 extends Component
 {
     public $title;
     public $amount;
+    public $color;
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($amount,$title)
+    public function __construct($amount,$title,$color = null)
     {
         $this->amount = $amount;
         $this->title = $title;
+        $this->color = $color ?? 'success';
     }
 
     public function render()
