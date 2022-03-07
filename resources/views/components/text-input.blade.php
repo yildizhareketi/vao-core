@@ -1,9 +1,13 @@
 <div class="form-group" id="formGroup{{ $name }}" style="@if($hidden) display:none; @endif">
-    @if($label || $name)
-        <label for="{{ $name }}">
-            {{ $label ?: $name }} @if($required)<span class="text-danger">*</span>@endif
-        </label>
+
+    @if(!$noLabel)
+        @if( $label || $name)
+            <label for="{{ $name }}">
+                {{ $label ?: $name }} @if($required)<span class="text-danger">*</span>@endif
+            </label>
+        @endif
     @endif
+
 
     @php
         $class = ''

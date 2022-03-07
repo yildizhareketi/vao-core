@@ -13,12 +13,13 @@ class TextInput extends Component
     public $placeholder;
     public $hidden;
     public $value;
+    public $noLabel;
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($name,$label = null ,$model=null,$placeholder = null,$required = false,$hidden = false,$value = null)
+    public function __construct($name,$label = null ,$model=null,$placeholder = null,$required = false,$hidden = false,$value = null,$noLabel = false)
     {
         $this->required = $required;
         $this->name = $name;
@@ -27,6 +28,7 @@ class TextInput extends Component
         $this->model = $model;
         $this->hidden = $hidden;
         $this->value = $value;
+        $this->noLabel = $noLabel;
     }
 
     public function render()
