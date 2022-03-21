@@ -35,6 +35,7 @@ class VaoCoreHelpers
                             </button>
                          </a>';
             }
+
         }
         return '<div class="btn-group">
                            '.$str.'

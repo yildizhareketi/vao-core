@@ -49,7 +49,7 @@
                     @csrf
                     <!--begin::Title-->
                         <div class="pb-13 pt-lg-0 pt-5">
-                            <img src="http://www.tekbassulama.com/image/cache/data/tekbas-logo-508x127.png" width="450" class="m-auto" alt="">
+                            <img src="{{ $logo ?? '' }}" width="450" class="m-auto" alt="">
                             <h3 class="font-weight-bolder text-dark font-size-h4 font-size-h1-lg">Personel Girişi</h3>
 
                         </div>
