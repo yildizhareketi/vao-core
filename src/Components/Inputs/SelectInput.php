@@ -15,13 +15,14 @@ class SelectInput extends Component
     public $id;
     public $hidden;
     public $dataKeyValue;
+    public $oldData;
 
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($label = null, $name, $id = null, $dataset = null, $placeholder = null, $multiple = false, $hidden = false,$dataKeyValue = false)
+    public function __construct($label = null, $name, $id = null, $dataset = null, $placeholder = null, $multiple = false, $hidden = false,$dataKeyValue = false ,$oldData = null)
     {
         $this->label = $label;
         $this->name = $name;
@@ -31,6 +32,7 @@ class SelectInput extends Component
         $this->id = $id;
         $this->hidden = $hidden;
         $this->dataKeyValue = $dataKeyValue;
+        $this->oldData = $oldData;
     }
 
     public function render()

@@ -40,3 +40,14 @@
     <div class="invalid-feedback">{{ $label }} {{ $message }}</div>
     @enderror
 </div>
+
+@push('extra-js-after')
+    <link href="{{ asset('vendor/vao-core/js/plugins/select2/js/select2.full.min.js') }}" rel="stylesheet"
+          type="text/css"/>
+
+    <script>
+        @if($multiple)
+        initMultiSelectWithoutAjax('{{$placeholder}}', '#{{$id ?? $name }}','{{$oldData}}')
+        @endif
+    </script>
+@endpush
