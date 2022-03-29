@@ -9,6 +9,7 @@ use Atak011\VaoCore\Components\Error\Error;
 use Atak011\VaoCore\Components\Forms\UpsertForm;
 use Atak011\VaoCore\Components\Inputs\TextInput;
 use Atak011\VaoCore\Components\Stats\Stats1;
+use Atak011\VaoCore\Components\Inputs\Checkbox1;
 use Atak011\VaoCore\Components\Inputs\SelectInput;
 use Atak011\VaoCore\Components\Table\DatatableTable;
 use Atak011\VaoCore\Components\Toast\ToastNotification;
@@ -37,6 +38,7 @@ class VaoCoreServiceProvider extends PackageServiceProvider
                 DatatableTable::class,
                 SelectInput::class,
                 Form::class,
+                Checkbox1::class,
             )
             ->hasConfigFile()
             ->hasViews()
