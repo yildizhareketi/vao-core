@@ -2,12 +2,19 @@
 
 namespace Atak011\VaoCore;
 
+use Carbon\Carbon;
+use Illuminate\Support\Str;
+
 class VaoCoreHelpers
 {
 
-    public function bak()
+    public function createRandomCode($prefix,$includeYear = false,$length = 8)
     {
-        return 'sen';
+        $rand = Str::random(8);
+
+        $year = $includeYear ? Carbon::now()->year:null;
+
+        return $prefix.$year.$rand;
     }
 
     public function generateActionsButton($data)

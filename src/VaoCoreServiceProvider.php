@@ -12,6 +12,7 @@ use Atak011\VaoCore\Components\Stats\Stats1;
 use Atak011\VaoCore\Components\Inputs\Checkbox1;
 use Atak011\VaoCore\Components\Inputs\SelectInput;
 use Atak011\VaoCore\Components\Table\DatatableTable;
+use Atak011\VaoCore\Components\Inputs\TextAreaInput;
 use Atak011\VaoCore\Components\Toast\ToastNotification;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
@@ -35,6 +36,7 @@ class VaoCoreServiceProvider extends PackageServiceProvider
                 ToastNotification::class,
                 TextInput::class,
                 UpsertForm::class,
+                TextAreaInput::class,
                 DatatableTable::class,
                 SelectInput::class,
                 Form::class,
