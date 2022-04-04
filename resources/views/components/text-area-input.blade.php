@@ -31,7 +31,7 @@
 
     @endphp
 
-        <textarea name="" id="{{ $name }}" class="form-control {{$class}}" placeholder="{{ $placeholder ?? $label }}" cols="30"  name="{{ $name }}" rows="10" @if($required) required @endif>{{$value}}</textarea>
+        <textarea id="{{ $name }}" class="form-control {{$class}}" placeholder="{{ $placeholder ?? $label }}" cols="30"  name="{{ $name }}" rows="10" @if($required) required @endif>{{$value}}</textarea>
     @error($name)
 
     <div class="invalid-feedback">{{ $label }} {{ $message }}</div>

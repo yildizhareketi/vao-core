@@ -10,7 +10,7 @@ class VaoCoreHelpers
 
     public function createRandomCode($prefix,$includeYear = false,$length = 8)
     {
-        $rand = Str::random(8);
+        $rand = strtoupper(Str::random(8));
 
         $year = $includeYear ? Carbon::now()->year:null;
 
