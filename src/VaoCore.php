@@ -12,4 +12,8 @@ class VaoCore
     public static function mail(){
         return new VaoCoreMail();
     }
+
+    public static function notification(){
+        return new VaoCoreNotification();
+    }
 }
