@@ -10,16 +10,18 @@ class Checkbox1 extends Component
     public $checked;
     public $value;
     public $label;
+    public $lg;
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($name,$checked = null ,$value = null,$label = null)
+    public function __construct($name,$checked = null ,$value = null,$label = null,$lg = null)
     {
         $this->name = $name;
         $this->checked = $checked;
         $this->value = $value;
+        $this->lg = $lg;
         $this->label = $label;
     }
 
