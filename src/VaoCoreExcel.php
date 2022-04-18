@@ -2,7 +2,7 @@
 
 namespace Atak011\VaoCore;
 
-use Illuminate\Support\Facades\Mail;
+use stdClass;
 use Maatwebsite\Excel\Facades\Excel;
 
 class VaoCoreExcel
