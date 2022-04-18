@@ -16,4 +16,8 @@ class VaoCore
     public static function notification(){
         return new VaoCoreNotification();
     }
+
+    public static function file(){
+        return new VaoCoreFile();
+    }
 }
