@@ -11,6 +11,7 @@ use Atak011\VaoCore\Components\Inputs\TextInput;
 use Atak011\VaoCore\Components\Stats\Stats1;
 use Atak011\VaoCore\Components\Inputs\Checkbox1;
 use Atak011\VaoCore\Components\Inputs\DateInput;
+use Atak011\VaoCore\Components\Inputs\FileInput;
 use Atak011\VaoCore\Components\Inputs\SelectInput;
 use Atak011\VaoCore\Components\Table\DatatableTable;
 use Atak011\VaoCore\Components\Inputs\TextAreaInput;
@@ -39,6 +40,7 @@ class VaoCoreServiceProvider extends PackageServiceProvider
                 UpsertForm::class,
                 TextAreaInput::class,
                 DateInput::class,
+                FileInput::class,
                 DatatableTable::class,
                 SelectInput::class,
                 Form::class,
