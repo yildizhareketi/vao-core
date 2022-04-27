@@ -361,7 +361,7 @@
 @stack('extra-js-after')
 
 @if(\Illuminate\Support\Facades\Session::has('notification'))
-    <x-vao-core-toast-notification text="Başarılı" />
+    <x-vao-core-toast-notification :text="\Illuminate\Support\Facades\Session::get('notification')" />
 @endif
 
 </body>

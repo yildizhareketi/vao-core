@@ -11,7 +11,7 @@
 						<span class="card-icon">
 												<i class="flaticon2-list text-primary"></i>
 											</span>
-                    <h3 class="card-label">{{ $modelName }} Listesi</h3>
+                    <h3 class="card-label">{{ $modelName }} {{ \Illuminate\Support\Facades\Config::get('theme.lang') == 'en' ? 'List':'Listesi' }}</h3>
                 </div>
                 @if($newButton)
                     <div class="card-toolbar">
@@ -29,7 +29,7 @@
 													</g>
 												</svg>
 											</span>
-                            Yeni {{ $modelName }}
+                            {{ \Illuminate\Support\Facades\Config::get('theme.lang') == 'en' ? 'New':'Yeni' }} {{ $modelName }}
                         </a>
                     </div>
                 @endif
