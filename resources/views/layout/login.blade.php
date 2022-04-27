@@ -50,7 +50,13 @@
                     <!--begin::Title-->
                         <div class="pb-13 pt-lg-0 pt-5">
                             <img src="{{ $logo ?? '' }}" width="450" class="m-auto" alt="">
-                            <h3 class="font-weight-bolder text-dark font-size-h4 font-size-h1-lg">Personel Girişi</h3>
+
+                            @if(\Illuminate\Support\Facades\Config::get('theme.lang') == 'en')
+                                <h3 class="font-weight-bolder text-dark font-size-h4 font-size-h1-lg">Admin Area</h3>
+                            @else
+                                <h3 class="font-weight-bolder text-dark font-size-h4 font-size-h1-lg">Personel Girişi</h3>
+                            @endif
+
 
                         </div>
                         <!--begin::Title-->
@@ -64,10 +70,14 @@
                         <!--begin::Form group-->
                         <div class="form-group">
                             <div class="d-flex justify-content-between mt-n5">
-                                <label class="font-size-h6 font-weight-bolder text-dark pt-5">Şifre</label>
-                                <a href="javascript:;"
-                                   class="text-primary font-size-h6 font-weight-bolder text-hover-primary pt-5"
-                                   id="kt_login_forgot">Şifrenizi mi Unuttunuz ?</a>
+
+                                @if(\Illuminate\Support\Facades\Config::get('theme.lang') == 'en')
+                                    <label class="font-size-h6 font-weight-bolder text-dark pt-5">Password</label>
+                                @else
+                                    <label class="font-size-h6 font-weight-bolder text-dark pt-5">Şifre</label>
+                                @endif
+
+
                             </div>
                             <input class="form-control form-control-solid h-auto py-6 px-6 rounded-lg" type="password"
                                    name="password" autocomplete="off"/>
@@ -76,9 +86,11 @@
                         <!--begin::Action-->
                         <div class="pb-lg-0 pb-5">
 
-                            <button type="submit"
-                                    class="btn btn-primary font-weight-bolder font-size-h6 px-8 py-4 my-3 mr-3">Giriş Yap
-                            </button>
+                            @if(\Illuminate\Support\Facades\Config::get('theme.lang') == 'en')
+                                <button type="submit" class="btn btn-primary font-weight-bolder font-size-h6 px-8 py-4 my-3 mr-3">Login</button>
+                            @else
+                                <button type="submit" class="btn btn-primary font-weight-bolder font-size-h6 px-8 py-4 my-3 mr-3">Giriş Yap</button>
+                            @endif
 
                         </div>
                         <!--end::Action-->
@@ -166,8 +178,15 @@
                     <span class="mr-1">{{ \Carbon\Carbon::now()->year }} ©</span>
                     <a href="http://keenthemes.com/metronic" target="_blank" class="text-dark-75 text-hover-primary">CloudVao</a>
                 </div>
-                <a href="#" class="text-primary ml-5 font-weight-bolder font-size-lg">Destek</a>
-                <a href="#" class="text-primary ml-5 font-weight-bolder font-size-lg">İletişim</a>
+
+                @if(\Illuminate\Support\Facades\Config::get('theme.lang') == 'en')
+                    <a href="#" class="text-primary ml-5 font-weight-bolder font-size-lg">Help</a>
+                    <a href="#" class="text-primary ml-5 font-weight-bolder font-size-lg">Contact</a>
+                @else
+                    <a href="#" class="text-primary ml-5 font-weight-bolder font-size-lg">Destek</a>
+                    <a href="#" class="text-primary ml-5 font-weight-bolder font-size-lg">İletişim</a>
+                @endif
+
             </div>
         </div>
     </div>

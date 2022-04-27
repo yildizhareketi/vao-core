@@ -4,9 +4,15 @@
         <ul class="menu-nav">
 
 
-            @if(\Illuminate\Support\Facades\Config::has('menu'))
+            @if(\Illuminate\Support\Facades\Config::has('menu') || \Illuminate\Support\Facades\Config::has('theme.menu'))
 
-                @foreach(\Illuminate\Support\Facades\Config::get('menu') as $item)
+                @php
+                    $menu = \Illuminate\Support\Facades\Config::has('menu') ? \Illuminate\Support\Facades\Config::get('menu'):\Illuminate\Support\Facades\Config::get('theme.menu')
+
+                @endphp
+
+            
+                @foreach($menu as $item)
 
                     @if(isset($item['section']) && $item['section'] != null )
                         <li class="menu-section">
