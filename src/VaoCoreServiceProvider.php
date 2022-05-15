@@ -7,6 +7,7 @@ use Atak011\VaoCore\Components\Alert;
 use Atak011\VaoCore\Components\Forms\Form;
 use Atak011\VaoCore\Components\Error\Error;
 use Atak011\VaoCore\Components\Forms\UpsertForm;
+use Atak011\VaoCore\Components\Inputs\NumberInput;
 use Atak011\VaoCore\Components\Inputs\TextInput;
 use Atak011\VaoCore\Components\Stats\Stats1;
 use Atak011\VaoCore\Components\Inputs\Checkbox1;
@@ -37,6 +38,7 @@ class VaoCoreServiceProvider extends PackageServiceProvider
                 Stats1::class,
                 ToastNotification::class,
                 TextInput::class,
+                NumberInput::class,
                 UpsertForm::class,
                 TextAreaInput::class,
                 DateInput::class,
