@@ -20,4 +20,8 @@ class VaoCore
     public static function file(){
         return new VaoCoreFile();
     }
+
+    public static function geolocation(){
+        return new VaoCoreGeolocation();
+    }
 }
