@@ -31,7 +31,7 @@
 
     @endphp
 
-    <input type="text" class="form-control {{$class}}" id="{{ $name }}" name="{{ $name }}"
+    <input type="number" class="form-control {{$class}}" id="{{ $name }}" name="{{ $name }}"
            value="{{$value}}"
            placeholder="{{ $placeholder ?? $label }}" @if($required) required @endif @if($disabled) disabled @endif>
 
