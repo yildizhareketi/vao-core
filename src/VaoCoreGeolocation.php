@@ -16,8 +16,14 @@ class VaoCoreGeolocation
             $key = "AIzaSyBQPCaWiV4M4eYrND_7_qF12d6YqX_ZhL8";
         }
         $data = Http::get('https://maps.googleapis.com/maps/api/geocode/json?address='.$address.' '.$state.' '.$city.'&key='.$key);
-        $lat = $data->json()['results'][0]['geometry']['location']['lat'];
-        $lon = $data->json()['results'][0]['geometry']['location']['lng'];
+        if (empty($data->json()['results'])){
+            $lat = 0;
+            $lon = 0;
+        }else{
+            $lat = $data->json()['results'][0]['geometry']['location']['lat'];
+            $lon = $data->json()['results'][0]['geometry']['location']['lng'];
+        }
+
         return ['lat' => $lat,'lon' => $lon,'geopoint' => DB::raw("(GeomFromText('POINT(".$lat." ".$lon.")'))")];
     }
 
