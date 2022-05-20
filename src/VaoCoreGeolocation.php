@@ -24,7 +24,7 @@ class VaoCoreGeolocation
             $lon = $data->json()['results'][0]['geometry']['location']['lng'];
         }
 
-        return ['lat' => $lat,'lon' => $lon,'geopoint' => DB::raw("(GeomFromText('POINT(".$lat." ".$lon.")'))")];
+        return ['lat' => $lat,'lon' => $lon,'geopoint' => DB::raw("(ST_GeomFromText('POINT(".$lat." ".$lon.")'))")];
     }
 
 }
