@@ -29,7 +29,7 @@
       class="header-fixed header-mobile-fixed subheader-enabled subheader-fixed aside-enabled aside-fixed aside-minimize-hoverable page-loading">
 <div id="kt_header_mobile" class="header-mobile align-items-center header-mobile-fixed">
     <a href="/">
-        <img alt="Logo" width="100" src="{{ asset('vendor/vao-core/logo-tr.png') }}"/>
+        <img alt="Logo" width="100" src="{{ config('theme.header-logo') ? config('theme.header-logo'):asset('vendor/vao-core/logo-tr.png') }}"/>
     </a>
     <div class="d-flex align-items-center">
         <button class="btn p-0 burger-icon burger-icon-left" id="kt_aside_mobile_toggle">
@@ -61,7 +61,7 @@
         <div class="aside aside-left aside-fixed d-flex flex-column flex-row-auto" id="kt_aside">
             <div class="brand flex-column-auto" id="kt_brand">
                 <a href="/" class="brand-logo">
-                    <img alt="Logo" width="175" src="{{ asset('vendor/vao-core/logo-tr.png') }}"/>
+                    <img alt="Logo" width="175" src="{{ config('theme.header-logo') ? config('theme.header-logo'):asset('vendor/vao-core/logo-tr.png') }}"/>
                 </a>
 
                 <button class="brand-toggle btn btn-sm px-0" id="kt_aside_toggle">
