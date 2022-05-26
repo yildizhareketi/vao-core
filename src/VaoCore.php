@@ -24,4 +24,8 @@ class VaoCore
     public static function geolocation(){
         return new VaoCoreGeolocation();
     }
+
+    public static function sms($provider, $creadiantials = null){
+        return new VaoCoreSms($provider, $creadiantials);
+    }
 }
