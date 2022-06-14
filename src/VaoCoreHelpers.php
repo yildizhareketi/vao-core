@@ -27,6 +27,7 @@ class VaoCoreHelpers
                                      <i class="fa fa-pencil-alt"></i>
                             </button>
                          </a>';
+                continue;
             }
             if ($key == 'show') {
                 $str .= '<a href="'.$value.'">
@@ -34,6 +35,7 @@ class VaoCoreHelpers
                                      <i class="fa fa-eye"></i>
                             </button>
                          </a>';
+                continue;
             }
             if ($key == 'delete') {
                 $str .= '<a onclick="deleteData(\''.$value.'\')">
@@ -41,8 +43,13 @@ class VaoCoreHelpers
                                      <i class="fa fa-trash"></i>
                             </button>
                          </a>';
+                continue;
             }
-
+            $str .= '<a href="'.$value.'">
+                            <button type="button" class="btn btn-sm btn-danger js-tooltip-enabled ml-1 deleteAction">
+                                     <i class="fa fa-'.$key.'"></i>
+                            </button>
+                         </a>';
         }
         return '<div class="btn-group">
                            '.$str.'

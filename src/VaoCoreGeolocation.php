@@ -27,4 +27,19 @@ class VaoCoreGeolocation
         return ['lat' => $lat,'lon' => $lon,'geopoint' => DB::raw("(ST_GeomFromText('POINT(".$lat." ".$lon.")'))")];
     }
 
+    public function rangeBetweenCoordinates($fromLat,$fromLon,$toLat,$toLon)
+    {
+        $latFrom = deg2rad($fromLat);
+        $lonFrom = deg2rad($fromLon);
+        $latTo = deg2rad($toLat);
+        $lonTo = deg2rad($toLon);
+
+        $latDelta = $latTo - $latFrom;
+        $lonDelta = $lonTo - $lonFrom;
+
+        $angle = 2 * asin(sqrt(pow(sin($latDelta / 2), 2) +
+                cos($latFrom) * cos($latTo) * pow(sin($lonDelta / 2), 2)));
+        return $angle * 6371000;
+    }
+
 }
