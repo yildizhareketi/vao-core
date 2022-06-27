@@ -75,7 +75,7 @@
             language: {
                 "url": "//cdn.datatables.net/plug-ins/1.10.12/i18n/Turkish.json"
             },
-            ajax: "{{ route($modelSlug.'.datatable',$extraAttributes ?? null) }}",
+            ajax: "{!!   route($modelSlug.'.datatable',$extraAttributes ?? null) !!}",
             columns: {!! $decoded !!},
         });
     </script>
