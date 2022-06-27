@@ -5,9 +5,12 @@
 
 @section('body')
     <div class="container-fluid">
+        {{ $slot }}
         <div class="card card-custom">
+
             <div class="card-header">
                 <div class="card-title">
+
 						<span class="card-icon">
 												<i class="flaticon2-list text-primary"></i>
 											</span>
@@ -61,7 +64,6 @@
     $decoded = json_encode($new)
 @endphp
 
-
 @push('extra-js-after')
     <script src="{{ asset('vendor/vao-core/plugins/custom/datatables/datatables.bundle.js') }}"></script>
     <script>
@@ -73,7 +75,7 @@
             language: {
                 "url": "//cdn.datatables.net/plug-ins/1.10.12/i18n/Turkish.json"
             },
-            ajax: "{{ route($modelSlug.'.datatable') }}",
+            ajax: "{{ route($modelSlug.'.datatable',$extraAttributes ?? null) }}",
             columns: {!! $decoded !!},
         });
     </script>
