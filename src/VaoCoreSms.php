@@ -14,7 +14,7 @@ class VaoCoreSms
     {
         if (!$credentials){
             $credentials['apiKey'] = '8503085215';
-            $credentials['password'] = 'N6-4D6De';
+            $credentials['password'] = 'T67P14A*';
             $credentials['title'] = '8503085215';
         }
         if ($provider == 'netgsm'){
