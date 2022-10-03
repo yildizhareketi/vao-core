@@ -13,8 +13,8 @@ class VaoCore
         return new VaoCoreMail();
     }
 
-    public static function notification(){
-        return new VaoCoreNotification();
+    public static function notification($provider= null,$credentials = null){
+        return new VaoCoreNotification($provider,$credentials = null);
     }
 
     public static function file(){
@@ -25,7 +25,8 @@ class VaoCore
         return new VaoCoreGeolocation();
     }
 
-    public static function sms($provider, $creadiantials = null){
-        return new VaoCoreSms($provider, $creadiantials);
+    public static function sms($provider, $credentials = null){
+        return new VaoCoreSms($provider, $credentials);
     }
+
 }
