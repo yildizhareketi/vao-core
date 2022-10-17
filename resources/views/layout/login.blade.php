@@ -52,9 +52,9 @@
                             <img src="{{ $logo ?? '' }}" width="450" class="m-auto" alt="">
 
                             @if(\Illuminate\Support\Facades\Config::get('theme.lang') == 'en')
-                                <h3 class="font-weight-bolder text-dark font-size-h4 font-size-h1-lg">Admin Area</h3>
+                                <h3 class="font-weight-bolder text-dark font-size-h4 font-size-h1-lg" style="margin-top: 50px" >Admin Area</h3>
                             @else
-                                <h3 class="font-weight-bolder text-dark font-size-h4 font-size-h1-lg">Personel Girişi</h3>
+                                <h3 class="font-weight-bolder text-dark font-size-h4 font-size-h1-lg" style="margin-top: 50px">Personel Girişi</h3>
                             @endif
 
 
