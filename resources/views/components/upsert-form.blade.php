@@ -5,7 +5,7 @@
         </div>
     </div>
 
-    <form action="{{ $method == 'PUT' ? route($modelSlug.'.update') : route($modelSlug.'.store') }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ $method == 'PUT' ? route($modelSlug.'.update', $modelId) : route($modelSlug.'.store') }}" method="POST" enctype="multipart/form-data">
         <div class="card-body">
 
         @if($method == 'PUT')
