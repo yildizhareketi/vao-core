@@ -355,7 +355,26 @@
         crossorigin="anonymous"></script>
 <script src="{{ asset('vendor/vao-core/js/pages/widgets.js') }}"></script>
 <script src="{{ asset('vendor/vao-core/js/helper.js') }}"></script>
+<script>
+    var showDeleteSwal = function(onConfirm) {
+        if (typeof onConfirm !== "function") return false;
 
+        Swal.fire({
+            title: 'Silmek istediğinize emin misiniz?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Evet, sil!',
+            cancelButtonText: 'Vazgeç'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                onConfirm();
+            }
+        });
+    };
+</script>
 
 @yield('extra-js')
 @stack('extra-js-after')
