@@ -21,7 +21,7 @@
 
     @php
 
-        if (!$value) {
+        if (is_null($value)) {
             if(isset($model)) {
                 $value = $model->$name;
             }else{
