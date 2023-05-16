@@ -5,7 +5,6 @@
 
 @section('body')
     <div class="container-fluid">
-        {{ $slot }}
         <div class="card card-custom">
 
             <div class="card-header">
@@ -27,8 +26,8 @@
 														<rect x="0" y="0" width="24" height="24"></rect>
 														<circle fill="#000000" cx="9" cy="15" r="6"></circle>
 														<path
-                                                                d="M8.8012943,7.00241953 C9.83837775,5.20768121 11.7781543,4 14,4 C17.3137085,4 20,6.6862915 20,10 C20,12.2218457 18.7923188,14.1616223 16.9975805,15.1987057 C16.9991904,15.1326658 17,15.0664274 17,15 C17,10.581722 13.418278,7 9,7 C8.93357256,7 8.86733422,7.00080962 8.8012943,7.00241953 Z"
-                                                                fill="#000000" opacity="0.3"></path>
+                                                            d="M8.8012943,7.00241953 C9.83837775,5.20768121 11.7781543,4 14,4 C17.3137085,4 20,6.6862915 20,10 C20,12.2218457 18.7923188,14.1616223 16.9975805,15.1987057 C16.9991904,15.1326658 17,15.0664274 17,15 C17,10.581722 13.418278,7 9,7 C8.93357256,7 8.86733422,7.00080962 8.8012943,7.00241953 Z"
+                                                            fill="#000000" opacity="0.3"></path>
 													</g>
 												</svg>
 											</span>
@@ -37,6 +36,7 @@
                     </div>
                 @endif
             </div>
+            {{ $slot }}
             <div class="card-body">
                 <!--begin: Datatable-->
                 <table class="table table-bordered table-hover table-checkable" id="kt_datatable"
@@ -67,7 +67,7 @@
 @push('extra-js-after')
     <script src="{{ asset('vendor/vao-core/plugins/custom/datatables/datatables.bundle.js') }}"></script>
     <script>
-        $('#kt_datatable').DataTable({
+        var datatable = $('#kt_datatable').DataTable({
             responsive: true,
             autoWidth: false,
             processing: true,
@@ -75,7 +75,11 @@
             language: {
                 "url": "//cdn.datatables.net/plug-ins/1.10.12/i18n/Turkish.json"
             },
-            ajax: "{!!   route($modelSlug.'.datatable',$extraAttributes ?? null) !!}",
+            ajax: {
+                url: "{!!   route($modelSlug.'.datatable',$extraAttributes ?? null) !!}",
+                type: "GET",
+                data: {}
+            },
             columns: {!! $decoded !!},
         });
     </script>
