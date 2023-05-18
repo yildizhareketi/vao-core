@@ -57,6 +57,21 @@ class VaoCoreHelpers
 
     }
 
+    public function isMenuOpen($item)
+    {
+        if (! isset($item['children'])) {
+            return false;
+        }
 
+        $isOpen = false;
 
+        foreach ($item['children'] as $child) {
+            if ('/' . request()->path() === $child['link']) {
+                $isOpen = true;
+                break;
+            }
+        }
+
+        return $isOpen;
+    }
 }

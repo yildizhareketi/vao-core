@@ -8,10 +8,10 @@
     <form action="{{ $method == 'PUT' ? route($modelSlug.'.update', $modelId) : route($modelSlug.'.store') }}" method="POST" enctype="multipart/form-data">
         <div class="card-body">
 
-        @if($method == 'PUT')
-            @method('PUT')
-        @endisset
-        @csrf
+            @if($method == 'PUT')
+                @method('PUT')
+            @endisset
+            @csrf
 
             {{ $slot }}
 
