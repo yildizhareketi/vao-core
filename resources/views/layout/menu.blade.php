@@ -32,7 +32,7 @@ use Atak011\VaoCore\VaoCore;
                             aria-haspopup="true" {{ isset($item['children']) && $item['children'] ? 'data-menu-toggle="hover" ':null }}>
                             <a href="{{ isset($item['children']) && $item['children'] ? 'javascript:;':$item['link'] }}"
                                class="menu-link {{ isset($item['children']) && $item['children'] ? 'menu-toggle':null }}">
-                                <i class="menu-icon flaticon-home"></i>
+                                <i class="menu-icon {{ isset($item['icon-slug']) ? 'flaticon-' . $item['icon-slug'] : 'flaticon-home' }}"></i>
                                 <span class="menu-text">{{ $item['text'] }}</span>
 
                                 @if(isset($item['children']) && $item['children'])
@@ -81,7 +81,7 @@ m-submenu':null }}"
                                 aria-haspopup="true" {{ isset($item['children']) && $item['children'] ? 'data-menu-toggle="hover" ':null }}>
                                 <a href="{{ isset($item['children']) && $item['children'] ? 'javascript:;':$item['link'] }}"
                                    class="menu-link {{ isset($item['children']) && $item['children'] ? 'menu-toggle':null }}">
-                                    <i class="menu-icon flaticon-home"></i>
+                                    <i class="menu-icon {{ isset($item['icon-slug']) ? 'flaticon-' . $item['icon-slug'] : 'flaticon-home' }}"></i>
                                     <span class="menu-text">{{ $item['text'] }}</span>
 
                                     @if(isset($item['children']) && $item['children'])
