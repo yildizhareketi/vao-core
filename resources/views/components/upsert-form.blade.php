@@ -1,8 +1,11 @@
 <div class="card card-custom example example-compact gutter-b">
-    <div class="card-header">
+    <div class="card-header d-flex justify-content-between align-items-center">
         <div class="card-title">
-            <h3 class="card-label">{{ $title }}</h3>
+            {{ $title }}
         </div>
+        <a href="{{ route($modelSlug . '.index') }}" type="button" class="btn btn-sm btn-secondary btn-pill">
+            <i class="fa fa-arrow-left"></i> Geri
+        </a>
     </div>
 
     <form action="{{ $method == 'PUT' ? route($modelSlug.'.update', $modelId) : route($modelSlug.'.store') }}" method="POST" enctype="multipart/form-data">
